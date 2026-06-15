@@ -1,0 +1,141 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+        x:Class="AccountRegistrationApp.Views.RegistrationWindow"
+
+        Title="RegistrationWindow"
+        Width="450"
+        Height="580"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen">
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Шапка окна -->
+        <Border Background="{DynamicResource SukiBackground}"
+                Padding="20,15">
+            <StackPanel>
+                <TextBlock Text="Создание нового аккаунта"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Foreground="{DynamicResource SukiText}" />
+                <TextBlock Text="Заполните форму ниже для регистрации"
+                           FontSize="13"
+                           Foreground="{DynamicResource SukiSubText}" />
+            </StackPanel>
+        </Border>
+
+        <!-- Форма регистрации -->
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Margin="30,20" Spacing="15">
+
+                <!-- Поле Логин -->
+                <TextBlock Text="Логин"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource SukiText}"
+                           Margin="0,0,0,-8" />
+                <TextBox Name="UsernameBox"
+                         Watermark="Введите логин (обязательно)"
+                         Classes="SukiTextBox" />
+
+                <!-- Поле Email -->
+                <TextBlock Text="Email"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource SukiText}"
+                           Margin="0,0,0,-8" />
+                <TextBox Name="EmailBox"
+                         Watermark="example@mail.com (обязательно)"
+                         Classes="SukiTextBox" />
+
+                <!-- Поле Пароль -->
+                <TextBlock Text="Пароль"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource SukiText}"
+                           Margin="0,0,0,-8" />
+                <TextBox Name="PasswordBox"
+                         Watermark="Минимум 4 символа"
+                         PasswordChar="•"
+                         Classes="SukiTextBox" />
+
+                <!-- Поле Подтверждение пароля -->
+                <TextBlock Text="Подтверждение пароля"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource SukiText}"
+                           Margin="0,0,0,-8" />
+                <TextBox Name="ConfirmPasswordBox"
+                         Watermark="Повторите пароль"
+                         PasswordChar="•"
+                         Classes="SukiTextBox" />
+
+                <!-- Разделитель -->
+                <Separator Margin="0,10,0,5" />
+
+                <!-- Дополнительная информация (необязательно) -->
+                <TextBlock Text="Дополнительная информация (необязательно)"
+                           FontWeight="SemiBold"
+                           Foreground="{DynamicResource SukiText}"
+                           FontSize="12" />
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                    <!-- Имя -->
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Имя" FontSize="11" Foreground="{DynamicResource SukiSubText}" />
+                        <TextBox Name="FirstNameBox"
+                                 Watermark="Ваше имя"
+                                 Classes="SukiTextBox" />
+                    </StackPanel>
+
+                    <!-- Фамилия -->
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Фамилия" FontSize="11" Foreground="{DynamicResource SukiSubText}" />
+                        <TextBox Name="LastNameBox"
+                                 Watermark="Ваша фамилия"
+                                 Classes="SukiTextBox" />
+                    </StackPanel>
+                </Grid>
+
+                <!-- Телефон -->
+                <TextBlock Text="Телефон" FontSize="11" Foreground="{DynamicResource SukiSubText}" />
+                <TextBox Name="PhoneBox"
+                         Watermark="+7 (999) 123-45-67"
+                         Classes="SukiTextBox" />
+
+                <!-- Кнопка регистрации -->
+                <Button Name="RegisterButton"
+                        Classes="SukiButton"
+                        Background="{DynamicResource SukiPrimary}"
+                        Foreground="White"
+                        Content="Зарегистрироваться"
+                        HorizontalAlignment="Stretch"
+                        Height="45"
+                        Margin="0,10,0,0"
+                        FontWeight="Bold" />
+
+                <!-- Кнопка возврата ко входу -->
+                <Button Name="BackToLoginButton"
+                        Classes="SukiButton"
+                        Background="Transparent"
+                        Foreground="{DynamicResource SukiPrimary}"
+                        Content="◀ Уже есть аккаунт? Войти"
+                        HorizontalAlignment="Stretch" />
+
+                <!-- Блок с ошибками -->
+                <Border Background="#33EF4444"
+                        CornerRadius="8"
+                        Padding="10"
+                        IsVisible="False"
+                        Name="ErrorBorder">
+                    <StackPanel>
+                        <TextBlock Text="⚠️ Ошибка"
+                                   Foreground="#EF4444"
+                                   FontWeight="Bold"
+                                   Margin="0,0,0,5" />
+                        <TextBlock Name="ErrorText"
+                                   Foreground="#EF4444"
+                                   TextWrapping="Wrap"
+                                   FontSize="12" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
