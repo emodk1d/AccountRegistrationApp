@@ -39,7 +39,7 @@
                            FontWeight="SemiBold"
                            Foreground="{DynamicResource SukiText}" />
                 <TextBox Watermark="Введите логин (мин. 3 символа)"
-                         Text="{Binding NewUser.UserName}"
+                         Text=""
                          Classes="SukiTextBox" />
 
                 <!-- Email -->
@@ -48,7 +48,7 @@
                            Foreground="{DynamicResource SukiText}"
                            Margin="0,10,0,0" />
                 <TextBox Watermark="example@mail.com"
-                         Text="{Binding NewUser.Email}"
+                         Text=""
                          Classes="SukiTextBox" />
 
                 <!-- Пароль -->
@@ -57,7 +57,7 @@
                            Foreground="{DynamicResource SukiText}"
                            Margin="0,10,0,0" />
                 <TextBox Watermark="Минимум 4 символа"
-                         Text="{Binding NewUser.Password}"
+                         Text=""
                          PasswordChar="•"
                          Classes="SukiTextBox" />
 
@@ -67,24 +67,23 @@
                            Foreground="{DynamicResource SukiText}"
                            Margin="0,10,0,0" />
                 <TextBox Watermark="Повторите пароль"
-                         Text="{Binding ConfirmPassword}"
+                         Text=""
                          PasswordChar="•"
                          Classes="SukiTextBox" />
 
                 <!-- Кнопка регистрации -->
-                <Button Command="{Binding RegisterCommand}"
+                <Button 
                         Classes="SukiButton"
                         Background="{DynamicResource SukiPrimary}"
                         Foreground="White"
-                        Content="{Binding IsLoading}"
+                        Content=""
                         HorizontalAlignment="Stretch"
                         Height="45"
                         Margin="0,20,0,0"
-                        IsEnabled="{Binding CanRegister}"
                         FontWeight="Bold" />
 
                 <!-- Кнопка возврата -->
-                <Button Command="{Binding GoBackCommand}"
+                <Button 
                         Classes="SukiButton"
                         Background="Transparent"
                         Foreground="{DynamicResource SukiPrimary}"

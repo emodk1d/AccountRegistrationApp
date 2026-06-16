@@ -10,9 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "others", "others", "{AD7777
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{5F384478-F8C8-465B-8665-41463D4FDE7E}"
 	ProjectSection(SolutionItems) = preProject
-		compose.yaml = compose.yaml
-		Dockerfile = Dockerfile
-		.dockerignore = .dockerignore
+		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
 Global
