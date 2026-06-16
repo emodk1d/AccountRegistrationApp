@@ -1,0 +1,17 @@
+-- Таблицы создаются при инициализации
+CREATE TABLE IF NOT EXISTS Users (
+    Id SERIAL PRIMARY KEY,
+    UserName TEXT NOT NULL UNIQUE,
+    Password TEXT NOT NULL,
+    Email TEXT NOT NULL,
+    IsAdmin INTEGER NOT NULL DEFAULT 0,
+    CreatedAt TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Admins (
+    Id SERIAL PRIMARY KEY,
+    UserId INTEGER NOT NULL UNIQUE,
+    FullName TEXT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id) ON DELETE CASCADE
+);
+
